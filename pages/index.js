@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
+import { Configuration, OpenAIApi } from 'openai';
 
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+});
 
- async function getPrompt() {
-  const res = await fetch('https://api.example.com/...')
-  
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
- 
-  return res.json()
-}
+const openai = new OpenAIApi(configuration);
 
 export default function Home(props) {
 
@@ -33,8 +28,76 @@ export default function Home(props) {
 
   const handleKeyPress = (e) => setbtndisabled(false)
 
-  const handleClick = (e) => console.log(`likes ${likes+1}`)
- /* */
+  const handleClick = (e) => console.log(`xlikesx ${likes+1}`)
+
+  const chatGPT = async (prompt) => {
+    try {
+         const response = await openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            messages: [{role:"user", content:prompt}]
+         })
+        let answer = response["data"]["choices"][0]["message"]["content"]
+        //res.json({answer})
+        return answer
+       } 
+    catch(error) {
+         console.log("xerrorx",error)
+        //res.json({error})
+       }
+   }
+   
+
+/*   
+  const handleClickxxx = async () => {
+    console.log("button click")
+    let promptValue = inputValue
+    setinputValue("")
+    let res = await fetch("/api/chatGPT", {
+            method: 'POST', 
+                  headers: {
+                     'Content-Type': 'application/json',
+                     'Access-Control-Allow-Origin': '*',
+                     'Access-Control-Allow-Headers': 'Authorization,Content-Type ',
+                    },
+                  body: JSON.stringify({ prompt: promptValue })
+                  })
+        let answer = await res.json();
+        let answerText = answer["answer"];
+        console.log(answerText)
+  }
+  
+  const handleSumit = () => {
+   console.log("button click")
+   let prompt = inputValue
+   setinputValue("")
+
+   let interval1 = setInterval(() => {
+    
+        setinputValue(inputValue + ".")
+        if (inputValue === "....") setinputValue("")
+
+    }, 200)
+
+   let promptValue = prompt +"\r\n"+"\r\n"
+   let answerText = chatGPT(prompt)["answer"]
+
+   clearInterval(interval1)
+   setinputValue("")
+
+   let finalText = promptValue + answerText;
+   let index = 0;
+
+   let interval2 = setInterval(() => {
+      if (index < finalText.length){
+            setinputValue(inputValue+finalText.charAt(index))
+            index++
+          } else {
+              clearInterval(interval2)
+          }  
+      }, 20)
+
+    }
+
   const submitInput = async () => {
         const prompt = document.querySelector("#prompt");
         const promptValue = inputvalue+"\r\n"+"\r\n";  
@@ -71,7 +134,7 @@ export default function Home(props) {
              }  
         }, 20)
       }
-
+*/
   return (
       <>
         <h3>
