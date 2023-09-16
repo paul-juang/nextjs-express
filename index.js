@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const cors = require('cors');
-
+/*
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
@@ -10,7 +10,7 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-
+*/
 require('dotenv').config();
 
 const path = require('path');
