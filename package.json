@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "build --output public"
+    "build": "node index.js"
   },
   "keywords": [],
   "author": "",
