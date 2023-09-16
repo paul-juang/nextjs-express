@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "https://github.com/paul-juang/nextjs-express build --output public"
+    "build": "build --output public"
   },
   "keywords": [],
   "author": "",
