@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   button.addEventListener("click", async function(e) {
     e.preventDefault()
-    
+    console.log("click")
+ /*   
+
     const promptValue = prompt.value.trim()+"\r\n";
     prompt.value = "";
     prompt.placeholder = "";
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       prompt.value += ".";
       if (prompt.value === "....") prompt.value = ""
     }, 300)
-    
+
     let res = await fetch("/chatGPT", {
             method: 'POST', 
                   headers: {
@@ -53,5 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
               clearInterval(interval2)
              }  
         }, 20)
+*/
     })
+    
 })

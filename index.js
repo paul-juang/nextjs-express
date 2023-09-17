@@ -40,7 +40,10 @@ app.get('/', (req, res) => {
 })
 
 app.post("/chatGPT", async (req, res) => {
+    let answer = "hello world"
+    res.json({answer})
 
+/*
   let prompt = req.body.prompt;
 
   const { Configuration, OpenAIApi } = require("openai");
@@ -61,13 +64,12 @@ app.post("/chatGPT", async (req, res) => {
         res.json({answer})
        } 
     catch(error) {
-        console.log({error})
         res.json({error})
        }
     }
 
    chatGPT(prompt)
-
+*/
   })
   
 app.listen(PORT, () => {
