@@ -9,7 +9,9 @@ const openai = new OpenAIApi(configuration);
 export default function handler(req,res) {
 
   let prompt = req.body.prompt;
-  
+   res.status(200).json({ prompt: 'welcome from chatgpt'})
+
+  /*
   const chatGPT = async (prompt) => {
     try {
          const response = await openai.createChatCompletion({
@@ -24,4 +26,5 @@ export default function handler(req,res) {
        }
     }
    chatGPT(prompt)
+   */
 }
