@@ -1,7 +1,14 @@
 import { Configuration, OpenAIApi } from 'openai';
-
+/*
+export async function getStaticProps() {
+  const db = await myDB.connect({
+    apiKey: process.env.OPENAI_API_KEY
+  })
+  return(
+  )
+}*/
 const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.OPENAI_API_KEY
 });
 
 const openai = new OpenAIApi(configuration);
@@ -9,9 +16,9 @@ const openai = new OpenAIApi(configuration);
 export default function handler(req,res) {
 
   let prompt = req.body.prompt;
-   res.status(200).json({ prompt: 'welcome from chatgpt'})
+   //res.status(200).json({ prompt: 'welcome from chatgpt'})
 
-  /*
+  
   const chatGPT = async (prompt) => {
     try {
          const response = await openai.createChatCompletion({
@@ -26,5 +33,5 @@ export default function handler(req,res) {
        }
     }
    chatGPT(prompt)
-   */
+   
 }
