@@ -1,12 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai';
-/*
-export async function getStaticProps() {
-  const db = await myDB.connect({
-    apiKey: process.env.OPENAI_API_KEY
-  })
-  return(
-  )
-}*/
+
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY
 });
@@ -20,6 +13,7 @@ export default function handler(req,res) {
 
   
   const chatGPT = async (prompt) => {
+
     try {
          const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
@@ -33,5 +27,14 @@ export default function handler(req,res) {
        }
     }
    chatGPT(prompt)
-   
 }
+
+/*
+export async function getServerSideProps() {
+    return {
+      props: {
+        hello: "world"
+      }
+    }
+  }
+  */

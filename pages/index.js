@@ -14,7 +14,8 @@ export default function Home(props) {
 
   const handleChange = (e) => setinputValue(e.target.value)
 
-  const handleDblClick = (e) => setinputValue(thisvalue)
+  //const handleDblClick = (e) => setinputValue(thisvalue) onDoubleClick= {handleDblClick}
+
 
   //const handleKeyPress = (e) => setbtndisabled(false)
 
@@ -67,7 +68,6 @@ export default function Home(props) {
         <textarea 
           value={inputValue} 
           onChange= {handleChange}
-          onDoubleClick= {handleDblClick}
           id="prompt" rows="12" cols="40" resizeable="true">
         </textarea>
         <button 
@@ -77,4 +77,12 @@ export default function Home(props) {
         </button>
       </>
     )
+  }
+  
+  export async function getServerSideProps() {
+    return {
+      props: {
+        hello: "world"
+      }
+    }
   }
