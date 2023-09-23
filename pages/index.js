@@ -14,11 +14,6 @@ export default function Home(props) {
 
   const handleChange = (e) => setinputValue(e.target.value)
 
-  //const handleDblClick = (e) => setinputValue(thisvalue) onDoubleClick= {handleDblClick}
-
-
-  //const handleKeyPress = (e) => setbtndisabled(false)
-
   const handleClick = async () => {
     const promptValue = inputValue.trim()
     setinputValue('')
