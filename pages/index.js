@@ -73,11 +73,3 @@ export default function Home(props) {
       </>
     )
   }
-  
-  export async function getServerSideProps() {
-    return {
-      props: {
-        hello: "world"
-      }
-    }
-  }
