@@ -21,7 +21,7 @@ h3 {
 #prompt {
   position: relative;
   top: 20px;
-  width: 94%;
+  width: 100%;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -34,7 +34,7 @@ h3 {
 
 #btn {
   position: relative;
-  top: 2px;
+  top: 12px;
   width: 60px;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -45,17 +45,3 @@ h3 {
   font-size: 16px;
 }
 
-@media (max-width: 767.98px) {
- #prompt { 
-   width: 86%;
-   padding: 10px 10px;
-   font-size: 16px;
- }
-
-#btn {
-  width: 48px;
-  padding: 10px 10px;
-  font-size: 12px;
- }
-
-}
