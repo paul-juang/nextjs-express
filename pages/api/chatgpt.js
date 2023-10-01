@@ -21,8 +21,14 @@ export default function handler(req,res) {
         res.status(200).json({ prompt: answer})
        } 
     catch(error) {
-        res.status(500).json({error})
+        res.status(504).json({prompt:"504 Gateway Time-out. The server didn’t respond in time"})
        }
     }
    chatGPT(prompt)
+}
+
+
+export const config = {
+  // Specifies the maximum allowed duration for this function to execute (in seconds)
+  maxDuration: 5,
 }
