@@ -1,3 +1,5 @@
+import type { Config, Context } from "@netlify/edge-functions";
+
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -27,8 +29,9 @@ export default function handler(req,res) {
    chatGPT(prompt)
 }
 
-
+/*
 export const config = {
   // Specifies the maximum allowed duration for this function to execute (in seconds)
-  maxDuration: 5,
+  maxDuration: 10,
 }
+*/
