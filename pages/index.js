@@ -82,7 +82,7 @@ export default function Home(props) {
           value={inputValue} 
           onChange= {handleChange}
           placeholder= {thisvalue3}
-          id="prompt" rows="12" cols="40" resizeable="true">
+          id="prompt" rows="13" cols="1" resizeable="true">
         </textarea>
         <button 
             onClick = {handleClick}  id="btn" 

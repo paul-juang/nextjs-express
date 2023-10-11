@@ -1,3 +1,6 @@
+export const maxDuration = 20; // This function can run for a maximum of 5 seconds
+export const dynamic = 'force-dynamic';
+
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -6,7 +9,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export default function handler(req,res) {
+export default function handler(req, res) {
 
   let prompt = req.body.prompt;
   
