@@ -17,6 +17,11 @@ h3 {
   text-align: center;
 }
 
+ul {
+
+  list-style: none;
+}
+
 #prompt {
   position: relative;
   top: 8px;
